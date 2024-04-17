@@ -15,16 +15,21 @@
 
 # 1. Employee section: This section is divided into the following tables:
 a. employees: This table contains information about a company’s employees. Each entry in this table is identified uniquely by the ‘employeeNumber’, which is the primary key of this table.
+
 b. offices: This contains information about the company’s offices that are located worldwide. Each office is uniquely identified by the ‘officeCode’, which is the primary key of this table. Each employee must have only one office against their ID, in which they have to work.
 
 # 2. Customer section: This section contains the following tables:
 a. customers: This table contains information about customers who buy the models from the company in bulk. They are retailers or shopkeepers who own firms or shops; they are not the final consumers. Each customer is uniquely identified by the ‘customerNumber’, which is the primary key of this table. A particular customer is either assigned an employee or not assigned any. The assigned employee is identified by the ‘salesRepEmployeeNumber’ column in this table. Multiple customers can be assigned to an employee.
+
 b. orders: This table contains information about the orders placed by the customers. Each order is uniquely identified by its ‘orderNumber’, which is the primary key of this table. Multiple orders can be placed by a particular customer, but each order should have a unique ‘orderNumber'.
+
 c. orderdetails: This table also contains details about the orders placed by the customers. However, both the 'orderNumber’ and ‘productCode’ are part of the composite primary key here.
+
 d. payments: This table contains information about the payments made by the customers after placing their orders. Here, you will notice a column named ‘checkNumber’, which refers to the unique number of the check through which the customer (‘customerNumber’) has made the payment. Under this table, ‘checkNumber’ is the primary key.
 
 # 3. Product section: This section has the following tables:
 a. products: The ‘products’ table contains information about the different products that are sold by the company. Each product is uniquely identified by the 'productCode’, which is the primary key of this table.
+
 b. productlines: This table is a broad categorisation of the type of toy models that are sold by the company, including vintage cars, motorcycles, trains and ships. Each product in the ‘products’ table must have a single product line.
 
 # Finally, you will have the following eight tables:
